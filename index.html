@@ -8,7 +8,11 @@
     </head>
     <body>
         <h3>Score:<span id="score">0</span></h3>
-        <button id="start-button">Start/Pause</button>
+        <div class="buttons-container">
+            <button id="start-button">Start/Pause</button>
+            <button class="restart" onclick="window.location.reload(false)">Restart</button>
+        </div>
+        
 
         <div class="container">
             <div class="grid">
@@ -242,6 +246,15 @@
                 <div></div>
                 <div></div>
             </div>
+
+            <div class="controls">
+                <p class="descriptioon">Use your arrow keys or
+                    </br>click the buttons to control
+                </p>
+                <div class="arrow up"><img class="image" src="images/upArrow.png" alt="up arrow"/><h4>change orientation</h4></div>
+                <div class="arrow right"><img class="image" src="images/rightArrow.png" alt="right arrow"/><h4>move right</h4></div>
+                <div class="arrow left"><img class="image" src="images/leftArrow.png" alt="left arrow"/><h4>move left</h4></div>
+                <div class="arrow down"><img class="image" src="images/downArrow.png" alt="down arrow"/><h4>accelerate down</h4></div>
         </div>
     </body>
 </html>
