@@ -5,11 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let squares = Array.from(document.querySelectorAll('.grid div'));
     const scoreDisplay = document.querySelector('#score');
     const startBtn = document.querySelector('#start-button');
+    const up = document.querySelector('.up');
+    const right = document.querySelector('.right');
+    const left = document.querySelector('.left');
+    const down = document.querySelector('.down');
     let timerId;
     let score = 0;
     const colors = [
         'orange',
+        'palevioletred',
         'red',
+        'lawngreen',
         'purple',
         'green',
         'blue'
@@ -23,11 +29,25 @@ document.addEventListener('DOMContentLoaded', () => {
         [width, width*2, width*2+1, width*2+2],
     ];
 
+    const revLTetromino = [
+        [0, 1, width+1, width*2+1],
+        [2, width, width+1, width+2],
+        [1, width+1, width*2+1, width*2+2],
+        [width, width+1, width+2, width*2],
+    ];
+
     const zTetromino = [
         [width+1, width+2, width*2, width*2+1],
         [0, width, width+1, width*2+1],
         [width+1, width+2, width*2, width*2+1],
         [0, width, width+1, width*2+1]
+    ];
+
+    const revZTetromino = [
+        [width, width+1, width*2+1, width*2+2],
+        [2, width+1, width+2, width*2+1],
+        [width, width+1, width*2+1, width*2+2],
+        [2, width+1, width+2, width*2+1]
     ];
 
     const tTetromino = [
@@ -51,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         [width, width+1, width+2, width+3]
     ];    
 
-    const theTetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino];
+    const theTetrominoes = [lTetromino, revLTetromino, zTetromino, revZTetromino, tTetromino, oTetromino, iTetromino];
 
     let currentPosition = 4;
     let currentRotation = 0;
@@ -89,6 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     document.addEventListener('keyup', control);
+    up.addEventListener('click', (event) => rotate());
+    right.addEventListener('click', (event) => moveRight());
+    left.addEventListener('click', (event) => moveLeft());
+    down.addEventListener('click', (event) => moveDown());
 
     // moving down
     function moveDown() {
@@ -155,7 +179,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // the tetrominos without rotations
     const upNextTetrominoes = [
         [1, displayWidth+1, displayWidth*2+1, 2], // L
+        [1, displayWidth+1, displayWidth*2+1, 0], // revL
         [0, displayWidth, displayWidth+1, displayWidth*2+1], // Z
+        [2, displayWidth+1, displayWidth+2, displayWidth*2+1], // revZ
         [1, displayWidth, displayWidth+1, displayWidth+2], // T
         [0, 1, displayWidth, displayWidth+1], // O
         [1, displayWidth+1, displayWidth*2+1, displayWidth*3+1] // I
