@@ -1,34 +1,117 @@
+html {
+    background-color: skyblue;
+}
+
 .container {
+    display: flex;
+    margin-left: 35%;
+}
+
+#score {
+    font-family: sans-serif;
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+h3 {
+    font-family: sans-serif;
+    font-weight: 500;
+    margin-left: 35%;
+    margin-bottom: 5px;
+}
+
+button {
+    border-radius: 8px;
+    font-family: sans-serif;
+    background-color: lightsalmon;
+    margin-left: 35%;
+    margin-bottom: 5px;
+}
+
+button:hover {
+    opacity: 0.5;
+}
+
+.restart {
+    margin-left: 10px;
+}
+
+.buttons-container {
     display: flex;
 }
 
 .grid {
-    width: 200px;
-    height: 400px;
-    background-color: yellow;
+    width: 230px;
+    height: 460px;
+    background-color: #e5e5e5;
     display: flex;
     flex-wrap: wrap;
+    border-radius: 5px;
 }
 
 .grid div {
-    height: 20px;
-    width: 20px;
+    height: 23px;
+    width: 23px;
 }
 
 .tetromino {
     background-color: blue;
+    border-radius: 5px;
 }
 
 .mini-grid {
     margin-left: 50px;
-    width: 80px;
-    height: 80px;
+    width: 92px;
+    height: 92px;
     flex-wrap: wrap;
     display: flex;
-    background-color: yellow;
+    background-color: #e5e5e5;
+    border-radius: 5px;
+    padding-left: 2%;
+    padding-right: 1%;
+    padding-top: 3%;
 }
 
+.controls {
+    display: block;
+    margin-top: 15%;
+    margin-left: 0%;
+}
+
+
 .mini-grid div {
-    height: 20px;
-    width: 20px;
+    height: 23px;
+    width: 23px;
+}
+
+.arrow {
+    display: flex;
+}
+
+.image {
+    height: 32px;
+    width: 32px;
+    margin-top: 16px;
+    margin-left: 2.5px;
+}
+
+.image:hover {
+    height: 37px;
+    width: 37px;
+    margin-top: 11px;
+    margin-left: 0px;
+    cursor: pointer;
+}
+
+h4 {
+    margin-left: 8px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: sans-serif;
+    color: rgb(94, 91, 89);
 }
